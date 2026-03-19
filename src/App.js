@@ -8,14 +8,14 @@ import settingsContext from './settingsContext';
 
 function App() {
   
-  const [showSettings, setShowSettings] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
   const [workMinutes, setWorkMinutes] = useState(45);
   const [breakMinutes, setBreakMinutes] = useState(15);
 
   return (
     <main>
       <settingsContext.Provider value ={{
-        workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes,
+        workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes, showSettings, setShowSettings,
       }}>
         {showSettings ? <Settings /> :  <Timer />}
       </settingsContext.Provider>
